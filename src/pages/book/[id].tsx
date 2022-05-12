@@ -21,6 +21,7 @@ const Book = () => {
 	const router = useRouter();
 	const { id } = router.query;
 	const { loading, error, data } = useQuery<{ book: IBook }>(GET_BOOK_BY_ID, {
+		skip: !id, // skip if no id (happens on first render)
 		variables: {
 			id: parseFloat(id as string),
 		},
