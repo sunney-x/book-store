@@ -1,7 +1,10 @@
 import type { NextApiRequest, NextApiResponse, PageConfig } from "next";
 import { ApolloServer } from "apollo-server-micro";
+import schema from "@lib-api/graphql/schema";
 
-const apolloServer = new ApolloServer({});
+const apolloServer = new ApolloServer({
+	schema,
+});
 
 const startServer = apolloServer.start();
 
