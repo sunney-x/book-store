@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { IBook } from "@typings/common";
 import { useRouter } from "next/router";
-import { BookDetailed, Center, HomeButton } from "@components";
+import { BookDetailed, Center, HomeButton, Spinner } from "@components";
 
 const GET_BOOK_BY_ID = gql`
 	query ($id: Float!) {
@@ -26,7 +26,7 @@ const Book = () => {
 		},
 	});
 
-	if (loading) return <p>Loading...</p>;
+	if (loading) return <Spinner />;
 	if (error) return <p>Error {error.message}</p>;
 	if (!data) return <p>No data</p>;
 

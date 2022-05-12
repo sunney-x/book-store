@@ -4,3 +4,4 @@ export { BookListing } from "./BookListing";
 export { Center } from "./Center";
 export { Search } from "./Search";
 export { HomeButton } from "./HomeButton";
+export { Spinner } from "./Spinner";

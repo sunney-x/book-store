@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import { gql, useQuery } from "@apollo/client";
-import { BooksGrid, Center, Search } from "@components";
+import { BooksGrid, Center, Search, Spinner } from "@components";
 import { useEffect, useState } from "react";
 import { IBook } from "@typings/common";
+import { SpinnerCircular } from "spinners-react";
 
 const GET_BOOKS = gql`
 	query {
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
 		};
 	}, [data, searchKeyword]);
 
-	if (loading) return <p>Loading...</p>;
+	if (loading) return <Spinner />;
 	if (error) return <p>Error {error.message}</p>;
 	if (!data) return <p>No data</p>;
 
