@@ -1,9 +1,9 @@
-import { SpinnerDotted } from "spinners-react";
+import { SpinnerRoundFilled } from "spinners-react";
 
 const Spinner = () => {
 	return (
 		<div className="h-screen w-full flex items-center justify-center">
-			<SpinnerDotted size={"128px"} />
+			<SpinnerRoundFilled size={"128px"} />
 		</div>
 	);
 };
